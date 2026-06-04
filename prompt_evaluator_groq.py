@@ -277,9 +277,9 @@ with tab2:
 # TAB 3 — Learn the Parameters
 # ═════════════════════════════════════════════════════════════════════════════
 with tab3:
-    st.markdown("### The 5 Evaluation Parameters — Interview Cheat Sheet")
+    st.markdown("### The 5 Evaluation Parameters")
     st.caption("Everything you need to explain these parameters confidently in your interview.")
-
+ 
     params_info = {
         "Relevance": {
             "icon": "🎯",
@@ -316,7 +316,9 @@ with tab3:
             "low": "Contains hallucinated facts, logical errors, incorrect data, or contradicts established knowledge.",
             "tip": '"Accuracy is hardest to score — it requires domain knowledge. When unsure, I flag for expert review rather than guessing."'
         },
-            for param, info in params_info.items():
+    }
+ 
+    for param, info in params_info.items():
         with st.expander(f"{info['icon']} {param}", expanded=False):
             st.markdown(f"**Definition:** {info['definition']}")
             col1, col2 = st.columns(2)
@@ -327,7 +329,7 @@ with tab3:
             st.info(f"💬 **How to say it in your interview:**\n\n_{info['tip']}_")
  
     st.markdown("---")
-    }
+    
 
 # ── Footer ─────────────────────────────────────────────────────────────────────
 st.markdown("---")
