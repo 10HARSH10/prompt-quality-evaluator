@@ -318,38 +318,6 @@ with tab3:
         },
     }
 
-    for param, info in params_info.items():
-        with st.expander(f"{info['icon']} {param}", expanded=False):
-            st.markdown(f"**Definition:** {info['definition']}")
-            col1, col2 = st.columns(2)
-            with col1:
-                st.success(f"**High score (8–10):** {info['high']}")
-            with col2:
-                st.error(f"**Low score (1–4):** {info['low']}")
-            st.info(f"💬 **How to say it in your interview:**\n\n_{info['tip']}_")
-
-    st.markdown("---")
-    st.markdown("### Common Interview Questions & Answers")
-
-    faqs = [
-        ("What is prompt engineering?",
-         "Prompt engineering is the practice of crafting input text (prompts) that guides AI language models to produce high-quality, accurate, and useful outputs. It involves understanding how the model interprets language and structuring prompts to get the best results — through clarity, context, examples, and constraints."),
-        ("How do you evaluate a 'good' prompt?",
-         "A good prompt is clear (no ambiguity), specific (well-defined scope), contextual (gives the model enough background), and purposeful (has a clear expected output format or goal). I evaluate prompts on whether they would consistently produce accurate, relevant, and complete responses from an AI model."),
-        ("What's the difference between a generative and descriptive prompt?",
-         "A generative prompt asks the model to create something new — 'Write a product description for...'. A descriptive prompt asks the model to describe something that exists — 'Describe what happens when...'. Generative prompts are judged on creativity and coherence; descriptive ones on accuracy and completeness."),
-        ("How do you handle a pair where you're unsure about accuracy?",
-         "I flag it for subject-matter expert review rather than guessing. I score conservatively and note 'accuracy uncertain — requires domain verification'. Flagging uncertain content is more valuable than confidently wrong scoring."),
-        ("What parameters do you use to score a prompt-response pair?",
-         "Five core parameters: Relevance (does it answer the prompt?), Clarity (is it easy to understand?), Completeness (does it cover all parts?), Tone (is it appropriate for the context?), and Accuracy (are the facts correct?). Each is scored 1–10 with specific, actionable feedback."),
-        ("Why Groq for this project?",
-         "Groq offers 14,400 free requests per day with zero setup friction — no billing, no project configuration, just an API key. It runs LLaMA 3.3 70B which has strong instruction-following for structured JSON output, critical for consistent evaluation scoring. The inference speed is also significantly faster than most alternatives."),
-    ]
-
-    for q, a in faqs:
-        with st.expander(f"❓ {q}"):
-            st.markdown(f"**Answer:** {a}")
-
 # ── Footer ─────────────────────────────────────────────────────────────────────
 st.markdown("---")
 st.markdown(
