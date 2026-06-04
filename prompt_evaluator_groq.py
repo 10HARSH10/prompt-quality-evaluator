@@ -316,6 +316,17 @@ with tab3:
             "low": "Contains hallucinated facts, logical errors, incorrect data, or contradicts established knowledge.",
             "tip": '"Accuracy is hardest to score — it requires domain knowledge. When unsure, I flag for expert review rather than guessing."'
         },
+            for param, info in params_info.items():
+        with st.expander(f"{info['icon']} {param}", expanded=False):
+            st.markdown(f"**Definition:** {info['definition']}")
+            col1, col2 = st.columns(2)
+            with col1:
+                st.success(f"**High score (8–10):** {info['high']}")
+            with col2:
+                st.error(f"**Low score (1–4):** {info['low']}")
+            st.info(f"💬 **How to say it in your interview:**\n\n_{info['tip']}_")
+ 
+    st.markdown("---")
     }
 
 # ── Footer ─────────────────────────────────────────────────────────────────────
