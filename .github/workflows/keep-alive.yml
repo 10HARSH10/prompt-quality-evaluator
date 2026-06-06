@@ -1,0 +1,17 @@
+name: Keep Streamlit App Awake
+
+on:
+  schedule:
+    # Runs at 00:00 every 5 days (Streamlit pauses apps after 7 days of inactivity)
+    - cron: '0 0 */5 * *'
+  # Allows you to trigger the ping manually from the Actions tab if needed
+  workflow_dispatch:
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ping App URL
+        # Replace the URL below with your actual Streamlit app link
+        run: |
+          curl -sL https://prompt-quality-evaluator-bl7j844rdsvtbvrdqmpl6p.streamlit.app > /dev/null
