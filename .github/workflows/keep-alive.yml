@@ -14,4 +14,4 @@ jobs:
       - name: Ping App URL
         # Replace the URL below with your actual Streamlit app link
         run: |
-          curl -sL https://prompt-quality-evaluator-bl7j844rdsvtbvrdqmpl6p.streamlit.app > /dev/null
+          curl -sL --cookie-jar cookies.txt --cookie cookies.txt https://prompt-quality-evaluator-bl7j844rdsvtbvrdqmpl6p.streamlit.app/ > /dev/null
